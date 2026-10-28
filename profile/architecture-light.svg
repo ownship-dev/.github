@@ -1,0 +1,65 @@
+<svg viewBox="0 0 960 430" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Ownship architecture</title>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#59636e"/>
+    </marker>
+  </defs>
+  <g font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+
+    <!-- containers -->
+    <rect x="230" y="24" width="700" height="200" rx="12" fill="none" stroke="#d0d7de" stroke-dasharray="5 5"/>
+    <text x="258" y="52" font-size="10.5" font-weight="600" letter-spacing="1.5" fill="#59636e">CONTROL PLANE — HOSTED</text>
+    <rect x="560" y="280" width="370" height="126" rx="12" fill="none" stroke="#d0d7de" stroke-dasharray="5 5"/>
+    <text x="584" y="308" font-size="10.5" font-weight="600" letter-spacing="1.5" fill="#59636e">YOUR MACHINE</text>
+
+    <!-- browser -->
+    <rect x="40" y="68" width="140" height="56" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="110" y="101" font-size="13.5" font-weight="600" fill="#1f2328" text-anchor="middle">Browser</text>
+
+    <!-- control plane row -->
+    <rect x="258" y="68" width="150" height="56" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="333" y="90" font-size="13.5" font-weight="600" fill="#1f2328" text-anchor="middle">web</text>
+    <text x="333" y="109" font-size="11.5" fill="#59636e" text-anchor="middle">Next.js</text>
+
+    <rect x="448" y="68" width="150" height="56" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="523" y="90" font-size="13.5" font-weight="600" fill="#1f2328" text-anchor="middle">api</text>
+    <text x="523" y="109" font-size="11.5" fill="#59636e" text-anchor="middle">NestJS</text>
+
+    <rect x="638" y="68" width="150" height="56" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="713" y="90" font-size="13.5" font-weight="600" fill="#1f2328" text-anchor="middle">worker</text>
+    <text x="713" y="109" font-size="11.5" fill="#59636e" text-anchor="middle">BullMQ</text>
+
+    <rect x="638" y="152" width="150" height="56" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="713" y="174" font-size="13.5" font-weight="600" fill="#1f2328" text-anchor="middle">agent-gateway</text>
+    <text x="713" y="193" font-size="11.5" fill="#59636e" text-anchor="middle">WebSocket</text>
+
+    <!-- machine -->
+    <rect x="584" y="322" width="160" height="64" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="664" y="347" font-size="13.5" font-weight="600" fill="#1f2328" text-anchor="middle">agent</text>
+    <text x="664" y="366" font-size="11.5" fill="#59636e" text-anchor="middle">Go · build · run · PTY</text>
+
+    <rect x="770" y="322" width="140" height="64" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+    <text x="840" y="347" font-size="13.5" font-weight="600" fill="#1f2328" text-anchor="middle">workloads</text>
+    <text x="840" y="366" font-size="11.5" fill="#59636e" text-anchor="middle">Proxmox LXC · Docker</text>
+
+    <!-- arrows -->
+    <line x1="184" y1="96" x2="250" y2="96" stroke="#59636e" marker-end="url(#arrow)"/>
+    <line x1="412" y1="96" x2="440" y2="96" stroke="#59636e" marker-end="url(#arrow)"/>
+    <line x1="602" y1="96" x2="630" y2="96" stroke="#59636e" marker-end="url(#arrow)"/>
+    <line x1="713" y1="128" x2="713" y2="144" stroke="#59636e" marker-end="url(#arrow)"/>
+    <text x="727" y="140" font-size="11.5" fill="#59636e">durable command queue</text>
+
+    <line x1="748" y1="354" x2="762" y2="354" stroke="#59636e" marker-end="url(#arrow)"/>
+
+    <!-- agent dials out -->
+    <line x1="713" y1="278" x2="713" y2="216" stroke="#59636e" marker-end="url(#arrow)"/>
+    <text x="699" y="242" font-size="11.5" fill="#59636e" text-anchor="end">outbound WebSocket</text>
+    <text x="699" y="258" font-size="11.5" fill="#59636e" text-anchor="end">no inbound ports</text>
+
+    <!-- live logs SSE -->
+    <path d="M 523 228 L 523 254 L 110 254 L 110 132" fill="none" stroke="#59636e" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+    <text x="316" y="246" font-size="11.5" fill="#59636e" text-anchor="middle">live logs — SSE</text>
+
+  </g>
+</svg>
